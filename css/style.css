@@ -1,0 +1,147 @@
+body {
+	background: #2c323a;
+	color: #ffffff;
+	font-family: "Segoe UI";
+	font-size: 12px;
+}
+
+/*//////////////////////////
+	CATEGORY
+//////////////////////////*/
+
+.category {
+	background: rgba(0,0,0,0.2);
+	margin: 4px;
+	padding-left: 4px;
+	padding-top: 4px;
+	box-sizing: border-box;
+	float: left;
+}
+
+.category-header {
+	height: 32px;
+	
+	margin-bottom: 4px;
+	margin-right: 4px;
+	padding: 9px;
+	box-sizing: border-box;
+}
+
+.category-header:hover {
+	background: rgba(255,255,255,0.1);
+}
+
+.category-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.c-size-3 {
+	width: 316px;
+}
+
+.c-size-4 {
+	width: 420px;
+}
+
+/*//////////////////////////
+	BOXES
+//////////////////////////*/
+.highlight { 
+         background-color: rgba(255,255,255,0.2) !important;
+		 border: none !important;
+}
+
+.box {
+	background: #515c6b;
+	margin-right: 4px;
+	margin-bottom: 4px;
+	padding: 7px;
+	border: 2px solid transparent;
+	box-sizing: border-box;
+	overflow: hidden;
+	z-index: 98;
+	transition: background 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+	
+}
+
+.box:hover {
+	border-color: rgba(255,255,255,0.6);
+}
+
+.b-dragging {
+	border-color: rgba(0,0,0,0.2) !important;
+	border-width: 1px;
+	
+}
+
+.b-size-small {
+	width: 48px;
+	height: 48px;
+}
+
+.b-size-middle {
+	width: 100px;
+	height: 100px;
+}
+
+.b-size-wide {
+	width: 204px;
+	height: 100px;
+}
+
+.b-size-large {
+	width: 204px;
+	height: 204px;
+}
+
+
+
+.grid-cat {
+	background: rgba(0,0,0,0.2);
+	margin: 4px;
+	padding: 4px;
+	box-sizing: border-box;
+	float: left;
+}
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(6,1fr);
+	grid-template-rows: repeat(8,1fr);
+	grid-auto-flow: row;
+	grid-gap: 4px;
+}
+.grid-item {
+	min-width: 48px;
+	min-height: 48px;
+	background: #515c6b;
+	padding: 7px;
+	border: 2px solid transparent;
+	box-sizing: border-box;
+	overflow: hidden;
+	transition: background 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.grid-item:hover {
+	border-color: rgba(255,255,255,0.6);
+}
+
+.gi-small {
+	grid-column: span 1;
+	grid-row: span 1;
+}
+
+.gi-middle {
+	grid-column: span 2;
+	grid-row: span 2;
+}
+
+.gi-wide {
+	grid-column: span 4;
+	grid-row: span 2;
+}
+
+.gi-large {
+	grid-column: span 4;
+	grid-row: span 4;
+}

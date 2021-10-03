@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
+		
+		<title>Windows 10 Start Menu</title>
+		
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+		
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		
+		<script type="text/javascript">
+			
+			$(document).ready(function(){
+			
+				for (i=0;i<=$(".category:first .box:last").index();i++) {
+					$(".box").eq(i).html( ( "[" + i + "] " + $(".box").eq(i).attr("class") ) );
+				};
+				
+				/*$(".box").click (function () {
+					
+					if ($(this).hasClass("b-size-small")) {
+						
+						$(this).removeClass("b-size-small").addClass("b-size-large");
+					
+					}
+					else {
+					
+					}
+				});*/
+				
+				
+				$(".category-container").sortable({
+					
+					items: ".box",
+					revert: true,
+					placeholder: "highlight",
+					cursor: "move",
+					tolerance: "pointer",
+					distance: 10,
+					opacity: 0.8,
+					zIndex: 99,
+					start: function(event,ui) {
+						$(".highlight").addClass($(ui.item).attr("class"));
+						
+						$(ui.item).addClass("b-dragging");
+						$(".box").not(ui.item).css("opacity","0.6");
+						$(".box").css("transform","scale(0.94)");
+					},
+					stop: function(event,ui) {
+						$(ui.item).removeClass("b-dragging");
+						$(".box").not(ui.item).css("opacity","1");
+						$(".box").css("transform","none");
+					}
+				
+				});
+				
+				$(".grid-container").sortable({
+					
+					items: ".grid-item",
+					revert: true,
+					placeholder: "highlight",
+					cursor: "move",
+					distance: 10,
+					opacity: 0.8,
+					zIndex: 99,
+					start: function(event,ui) {
+						$(".highlight").addClass($(ui.item).attr("class"));
+						
+						$(ui.item).addClass("b-dragging");
+						$(".grid-item").not(ui.item).css("opacity","0.6");
+						$(".grid-item").css("transform","scale(0.94)");
+					},
+					stop: function(event,ui) {
+						$(ui.item).removeClass("b-dragging");
+						$(".grid-item").not(ui.item).css("opacity","1");
+						$(".grid-item").css("transform","none");
+					}
+				
+				});
+				
+			});
+			
+		</script>
+		
+	</head>
+
+	<body>
+	
+		<div class="category c-size-3">
+			
+			<div class="category-header">
+				Category Name
+			</div>
+			
+			<div class="category-container">
+			
+				<div class="box b-size-middle">
+					
+				</div>
+				
+				<div class="box b-size-middle">
+					
+				</div>
+				
+				<div class="box b-size-middle">
+					
+				</div>
+				
+				<div class="box b-size-wide">
+					
+				</div>
+				
+				<div class="box b-size-small">
+					
+				</div>
+				
+				<div class="box b-size-small">
+					
+				</div>
+				
+				<div class="box b-size-small">
+					
+				</div>
+				
+				<div class="box b-size-small">
+					
+				</div>
+				
+				<div class="box b-size-large">
+					
+				</div>
+			
+			</div>
+			
+			
+		</div>
+		
+		<div class="grid-cat c-size-3">
+			
+			<div class="category-header">
+				Category Name
+			</div>
+			
+			<div class="grid-container">
+			
+				<div class="grid-item gi-wide">1</div>
+				<div class="grid-item">2</div>
+				<div class="grid-item">3</div>
+				<div class="grid-item gi-large">4</div>
+				<div class="grid-item">5</div>
+				<div class="grid-item gi-middle">6</div>
+				<div class="grid-item">7</div>
+				<div class="grid-item">8</div>
+				
+			</div>
+			
+			
+		</div>
+
+	</body>
+
+</html>
